@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int d,n,sum=0,k=0,b,a;
+    printf("enter number: ");
+    scanf("%d",&n);
+    a=b=n;
+    while(n!=0)
+    {
+        k++;
+        n=n/10;
+    }
+    while(a!=0)
+    {
+        d=a%10;
+        sum=sum + pow(d,k);
+        a=a/10;
+    }
+    if(b==sum)
+    {
+        printf("True");
+    }
+    else
+    {
+        printf(" False");
+    }
+    return 0;
+}
