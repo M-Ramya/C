@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int main() {
+
+  int k=0,base,digit=0,a,num1,num2,d=0,rev=0,n;
+     printf("base: ");
+     scanf("%d",&base);
+     printf("enter num1:");
+     scanf("%d",&num1);
+     printf("enter num2:");
+     scanf("%d",&num2);
+   while((num1!=0)||(num2!=0))
+    {
+
+        d=k+(num1%10)+(num2%10);
+        k=0;
+        num1=num1/10;
+        num2=num2/10;
+        if(d>=base)
+        {
+            a=d-base;
+            k++;
+            digit=digit*10+a;
+        }
+        else
+        {
+            digit=digit*10+d;
+        }
+     
+if((num1==0)&&(num2==0)&&(k==1))
+       {
+           digit=digit*10+k;
+       }
+      
+    }
+    while(digit!=0)
+    {
+        n=digit%10;
+        rev=rev*10+n;
+        digit=digit/10;
+        
+    }
+    
+   printf("%d",rev);
+      
+    return 0;
+}
