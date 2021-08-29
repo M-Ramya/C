@@ -1,0 +1,56 @@
+#include <stdio.h>  
+#include <string.h>  
+   
+void substring(char s[], char sub[], int p, int len){  
+   int c = 0;  
+   while (c < len) {  
+      sub[c] = s[p+c];  
+      c++;  
+   }  
+   sub[c] = '\0';
+ 
+}  
+   
+int main()  
+{  
+    char c[50],d[50],l[40],str[50];  
+    int i, j,m=0,k=0,b=0,a=0,len;  
+      
+    printf("The given string is: ");
+    scanf("%s",str);
+    len=strlen(str);
+    for(i = 0; i < len; i++)
+    { 
+       for(j = 1; j <= len-i; j++)
+        {  
+        substring(str,c,i,j);  
+ for(b=j-1,k=0;b>=0;b--)
+   {
+     d[k]= c[b];
+     k++;
+   }
+   d[k]='\0';
+   for(a=0,m=0,b=0;a<k;a++)
+   {
+       if(d[b]==c[a])
+       {
+       m++;
+       }
+       b++;
+   }
+  
+   if(m==k&&m>2)
+   {
+       if(strlen(l)<strlen(d))
+     {
+       printf( "longest substring is %s \n",d);
+       strcpy(l,d);
+     }
+       
+   }
+  
+  }         
+   }  
+
+    return 0;  
+}
