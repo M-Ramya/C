@@ -1,0 +1,40 @@
+
+#include <stdio.h>
+# include<string.h>
+
+int main() {
+    int i,j=0,n;
+    char s1[20],s2[20];
+    scanf("%[^\n]s",s1); //get an input from the user
+    n=strlen(s1);
+    for(i=n-1;i>=0;i--)
+    {
+        if(s1[i]>='a'&&s1[i]<='z')
+        {
+        s2[j]=s1[i];
+        j++;
+        }
+    }
+    s2[j]='\0';
+    j=0;
+     for(i=0;i<n;i++)
+    {
+        if(s1[i]>='a'&&s1[i]<='z')
+        {
+         printf("%c",s2[j]);
+         j++;
+        }
+        else if(s1[i]==32)
+        {
+            printf(" ");
+        }
+        else
+        {
+            printf("%c",s1[i]);
+        }
+    }
+    
+    
+    return 0; 
+
+}
